@@ -1,0 +1,8 @@
+lint:
+  plugins:
+    - './custom-rules-plugin.js'
+  extends:
+    - recommended
+  rules:
+    custom-rules/server-description-must-be-valid:
+      severity: warn
