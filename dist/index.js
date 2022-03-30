@@ -2482,6 +2482,7 @@ async function exec () {
     try {
         const config = await openapi.loadConfig('openapi/redocly.yaml');
         const file = core.getInput('file', { required: true });
+        console.log(`Validating file ${file}`);
         const lintData = await openapi.lint({
             ref: file,
             config: config
