@@ -178,11 +178,6 @@ async function exec () {
 
         console.table(findings);
 
-        // TODO: for private repositories, there is an issue with the below functionality
-        //       as the `secrets.GITHUB_TOKEN` does not seem to give sufficient access to
-        //       post contents to the workflow pipeline
-        return;
-
         const octokit = new github.getOctokit(core.getInput('github_token', { required: true }));
         const owner = github.context.repo.owner;
         const repo = github.context.repo.repo;
