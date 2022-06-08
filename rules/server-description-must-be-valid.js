@@ -28,7 +28,7 @@ function ServerDescriptionMustBeValid(options) {
         }
         if (!isValidDescription(server.description)) {
           report({
-            message: 'Server description must be an environment keyword - valid values are: TEST, STAGE, and PROD',
+            message: 'Server description must contain an environment keyword - valid values are: TEST, STAGE, and PROD',
             location: location.child(['servers']).key(),
           });
         }
@@ -38,5 +38,6 @@ function ServerDescriptionMustBeValid(options) {
 }
 
 function isValidDescription(description) {
-  return ['TEST', 'STAGE', 'PROD'].includes(description);
+  const environments = ['TEST', 'STAGE', 'PROD'];
+  return environments.some(env => description.includes(env));
 }
