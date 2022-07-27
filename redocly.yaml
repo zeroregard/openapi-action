@@ -5,4 +5,4 @@ lint:
     - recommended
   rules:
     custom-rules/server-description-must-be-valid:
-      severity: warn
+      severity: error
