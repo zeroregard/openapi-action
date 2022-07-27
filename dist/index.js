@@ -29557,6 +29557,9 @@ async function exec () {
                 console.error('Unable to post annotation batch');
             }
         }
+        if(failureCount > 0) {
+          core.setFailed('One or more validation failures occured - see checks!');
+        }
     } catch(e) {
         console.error(e)
         process.exit(1) 
